@@ -4,9 +4,17 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
+import org.springframework.beans.factory.annotation.Autowired;
 
+public class Cart {
+@Autowired
+	private CF;
+///////////sdfdslkjfsdlakjfdlskjfdslkajsadlkfjdslkfjdlsk
+////////////////sdfsdlkjfdslkjsdlkfdsjslkdjsdkl
+	
 	private List<Product> items = new ArrayList<Product>();
+	
+
 
 	public void add(Product product) {
 
@@ -33,22 +41,22 @@ public class Cart {
 					throw new IllegalArgumentException("Cannot add a product with count less than three or equal to 4");
 				}
 				
-				totalPrice = totalPrice.add(VS5.total(product.getNoOfProduct()));
-				System.out.println("Product count " +product.getNoOfProduct() + " VS5 $" + totalPrice );
+			
+				System.out.println("Product count " +product.getNoOfProduct() + " VS5 $" + VS5.total(product.getNoOfProduct())) ;
 
 			}
 
 			else if (product instanceof MB11) {
 
-				totalPrice = totalPrice.add(MB11.total(product.getNoOfProduct()));
-				System.out.println("Product count " +product.getNoOfProduct() + " MB11 $" + totalPrice );
+				
+				System.out.println("Product count " +product.getNoOfProduct() + " MB11 $" + MB11.total(product.getNoOfProduct()) );
 
 			}
 
 			else if (product instanceof CF) {
 
-				totalPrice = totalPrice.add(CF.total(product.getNoOfProduct()));
-				System.out.println("Product count " +product.getNoOfProduct() + " CF $" + totalPrice );
+				
+				System.out.println("Product count " +product.getNoOfProduct() + " CF $" + CF.total(product.getNoOfProduct()) );
 			}
 
 		}
